@@ -20,7 +20,7 @@ import os
 import re 
 from uuid import uuid4
 
-
+from mlflow import tracing
 from src.functions import call_chat_model, create_tool_calls_output
 from src.config import get_raw_configs
 from src.general_functions import get_workspace_client
@@ -108,7 +108,19 @@ class RefuGenie(ChatAgent):
                     results = reunification_process(parametrized_value)
                 elif "residence_permit_renewal" in function_name:
                     parametrized_value = function_arguments['parametrized_value']
-                    results = residence_permit_renewal(parametrized_value)              
+                    results = residence_permit_renewal(parametrized_value)  
+                    
+                ## MCP SUPPORT HERE        
+                # elif "NimbleResearchAgent" in function_name:
+                #     results = asyncio.run(main())
+                #     async def main():
+                #         agent = NimbleResearchAgent(nimble_api_key="your_api_key_here")
+                #         await agent.setup()
+                #         response = await agent.run_query("What is the best Ethiopian restaurant in Uptown Chicago?")
+                #         print(response)
+
+                #     asyncio.run(main())
+
                 else:
                     raise Exception(f"An error occurred - function not found: {function_name}")
                

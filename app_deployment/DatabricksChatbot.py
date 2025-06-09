@@ -35,7 +35,7 @@ class DatabricksChatbot:
 
     def _create_layout(self, user_name):
         user_name_cleaned = user_name.split('@')[0].capitalize()
-        default_message = f"Hello {user_name_cleaned}! Welcome to chat with RefuGenie on Databricks 🤖"
+        default_message = f"Hello {user_name_cleaned}! I'm here to help you with questions about your new country. Remember, I can help with your mother language"
 
         return html.Div([
             html.Div([
@@ -46,11 +46,17 @@ class DatabricksChatbot:
                 
                 # Title and content on the right
                 html.Div([
-                    html.H2(f'Welcome to chat with RefuGenie {user_name_cleaned}', 
+                    html.H2(f'RefuGenie - Navigate with hope 🧭', 
                             className='chat-title mb-3',
                             style={'color': 'white', 'text-align': 'left', 'margin': '0'})
                 ], className='flex-grow-1', style={'background-color': '#BD2A26', 'padding': '10px', 'border-radius': '5px'})
             ], className='d-flex align-items-center mb-3'),
+
+            # Added description text under header
+            html.Div([
+                html.P("RefuGenie helps you navigate your new country", 
+                    style={'text-align': 'left', 'margin-bottom': '0', 'font-size': '16px', 'color': 'white'})
+            ], style={'background-color': '#BD2A26', 'padding': '10px', 'border-radius': '5px', 'margin-bottom': '20px'}),
 
             dbc.Card([
                 dbc.CardBody([

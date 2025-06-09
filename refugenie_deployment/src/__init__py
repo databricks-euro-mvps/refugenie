@@ -2,3 +2,4 @@ from .general_functions import get_workspace_client
 from .genie_functions import run_genie
 from .functions import get_weather, call_chat_model, create_tool_calls_output
 from .tool_functions import reunification_process, residence_permit_renewal
+from .mcp import NimbleResearchAgent
