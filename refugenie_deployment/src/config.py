@@ -113,6 +113,26 @@ You cannot give **Answer** in the same message when triggering a tool.
                     }
                 }
             },
+
+            "genie_01f04577a47f1d3ea21c66ae85dab48e": {
+                "type": "function",
+                "function": {
+                    "name": "genie_01f04577a47f1d3ea21c66ae85dab48e",
+                    "description": "Use this tool to trigger Genie workspace about health related questions. Remember to pass the prompt here what is being asked.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "prompt": {
+                                "type": "string",
+                                "description": "Write an optimized prompt to fetch the requested information from Genie Space"
+                            }
+                        },
+                        "required": ["prompt"],
+                    }
+                }
+            },
+
+
     "reunification_process": {
     "type": "function",
     "function": {
@@ -134,6 +154,8 @@ You cannot give **Answer** in the same message when triggering a tool.
         }
     }
 },
+    
+    
 
 "residence_permit_renewal": {
     "type": "function",
